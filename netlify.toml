@@ -1,6 +1,6 @@
 [build]
     command = "npm run build:prod"
-    publish = "dist/mapas-app"
+    publish = "dist/mapas-app/browser"
 
     [[redirects]]
     from = "/*"
