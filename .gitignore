@@ -6,7 +6,7 @@ src/environments/environments.ts
 
 
 # Compiled output
-/dist
+# /dist
 /tmp
 /out-tsc
 /bazel-out
