@@ -1,0 +1,36 @@
+
+@if(isLoadingPlaces){
+    <div class="alert alert-primary mt-2 text-center">
+        <h6>Loading</h6>
+        <span>Wait a second...</span>
+    </div>
+}
+
+@if(places.length > 0){
+    <ul class="list-group mt-2">
+
+        @for(place of places; track $index){
+            <li 
+                class="list-group-item list-group-item-action pointer"
+                >
+                <h6>{{place.properties.name}}</h6>
+                <p>{{place.properties.full_address}}</p>
+                <button 
+                    class="btn btn-sm"
+                    [ngClass]="(place.id === selectedId) ? 'btn-outline-light':'btn-primary' "
+                    [class.active]="place.id === selectedId"
+                    (click)="flyTo(place)">
+                    Go to
+                </button>
+                <button 
+                    class="btn btn-sm"
+                    [class.active]="place.id === selectedId"
+                    (click)="getDirections(place)">
+                    Get Directions
+                </button>
+            </li>
+        }
+        
+
+    </ul>
+}
